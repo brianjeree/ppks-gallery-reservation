@@ -17,7 +17,7 @@ class AboutScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1000',
+                  'assets/foto about/fdrt.png',
                 ),
                 fit: BoxFit.cover,
               ),

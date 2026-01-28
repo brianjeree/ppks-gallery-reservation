@@ -315,29 +315,29 @@ class _UnifiedReservationScreenState extends State<UnifiedReservationScreen> wit
   Widget _buildRightPanelContent() {
     return Column(
       children: [
-        // Custom Tab Bar (Clean)
+        // Custom Tab Bar (Minimalist & Elegant)
         Padding(
-          padding: const EdgeInsets.fromLTRB(24, 100, 24, 0), // Increased Top Padding to clear AppBar/Gradient
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.grey[100],
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: TabBar(
-              controller: _tabController,
-              indicator: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                 boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4)],
+          padding: const EdgeInsets.fromLTRB(24, 100, 24, 16),
+          child: Align(
+            alignment: Alignment.centerLeft, // Align left for web-style reading flow, or Center
+            child: Container(
+              constraints: const BoxConstraints(maxWidth: 400),
+              child: TabBar(
+                controller: _tabController,
+                indicatorColor: Colors.green.shade800,
+                indicatorWeight: 3,
+                indicatorSize: TabBarIndicatorSize.label,
+                labelColor: Colors.green.shade900,
+                unselectedLabelColor: Colors.grey.shade500,
+                dividerColor: Colors.transparent,
+                overlayColor: MaterialStateProperty.all(Colors.transparent),
+                labelStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.bold),
+                unselectedLabelStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.normal),
+                tabs: const [
+                  Tab(text: "Buat Baru"),
+                  Tab(text: "Cek Status"),
+                ],
               ),
-              labelColor: Colors.black87,
-              unselectedLabelColor: Colors.grey,
-              dividerColor: Colors.transparent,
-              labelPadding: const EdgeInsets.symmetric(vertical: 12),
-              tabs: [
-                Text("Buat Baru", style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
-                Text("Cek Status", style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
-              ],
             ),
           ),
         ),
