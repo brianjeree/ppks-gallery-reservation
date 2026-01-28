@@ -17,7 +17,7 @@ class ContactScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1000',
+                  'assets/foto contact/callcenter.jpg',
                 ),
                 fit: BoxFit.cover,
               ),

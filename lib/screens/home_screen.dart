@@ -15,9 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Timer? _timer;
 
   final List<String> _backgroundImages = [
-    'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000', // Kebun Sawit
-    'https://images.unsplash.com/photo-1461301214746-1e790926d323?q=80&w=1000', // Green Landscape
-    'https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1000', // Nature
+    'assets/foto homescreen/kebun sawit.png',
+    'assets/foto homescreen/kebun sawit 2.png',
+    'assets/foto homescreen/pohon sawit.png',
   ];
 
   @override
@@ -35,12 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _startAutoSlide() {
     _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
-      if (_currentPage < _backgroundImages.length - 1) {
-        _currentPage++;
-      } else {
-        _currentPage = 0;
-      }
-
+      _currentPage++;
+      
       if (_pageController.hasClients) {
         _pageController.animateToPage(
           _currentPage,
@@ -61,14 +57,14 @@ class _HomeScreenState extends State<HomeScreen> {
           PageView.builder(
             controller: _pageController,
             physics: const NeverScrollableScrollPhysics(), // Disable manual swipe for background
-            itemCount: _backgroundImages.length,
+            // itemCount: null, // Infinite
             itemBuilder: (context, index) {
               return Container(
                 height: double.infinity,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(_backgroundImages[index]),
+                    image: AssetImage(_backgroundImages[index % _backgroundImages.length]),
                     fit: BoxFit.cover,
                   ),
                 ),
