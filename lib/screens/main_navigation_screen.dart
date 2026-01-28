@@ -4,6 +4,7 @@ import 'home_screen.dart';
 import 'unified_reservation_screen.dart';
 import 'about_screen.dart';
 import 'contact_screen.dart';
+import 'visit_check_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -21,9 +22,16 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     UnifiedReservationScreen(),
     AboutScreen(),
     ContactScreen(),
+    VisitCheckScreen(),
   ];
 
-  final List<String> _menuItems = ["HOME", "RESERVATION", "ABOUT", "CONTACT"];
+  final List<String> _menuItems = [
+    "HOME",
+    "RESERVATION",
+    "ABOUT",
+    "CONTACT",
+    "VISIT CHECK",
+  ];
 
   @override
   void dispose() {
@@ -64,7 +72,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               fontWeight: FontWeight.bold,
               fontSize: 20,
               shadows: [
-                 Shadow(offset: const Offset(0, 2), blurRadius: 4, color: Colors.black.withOpacity(0.5)),
+                Shadow(
+                  offset: const Offset(0, 2),
+                  blurRadius: 4,
+                  color: Colors.black.withOpacity(0.5),
+                ),
               ],
             ),
           ),
@@ -81,10 +93,17 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                     onPressed: () => _onMenuSelected(index),
                     style: TextButton.styleFrom(
                       foregroundColor: isActive ? Colors.white : Colors.white70,
-                      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 16,
+                      ),
                       textStyle: GoogleFonts.poppins(
-                        fontWeight: isActive ? FontWeight.bold : FontWeight.w500,
-                        decoration: isActive ? TextDecoration.underline : TextDecoration.none,
+                        fontWeight: isActive
+                            ? FontWeight.bold
+                            : FontWeight.w500,
+                        decoration: isActive
+                            ? TextDecoration.underline
+                            : TextDecoration.none,
                         decorationColor: Colors.white,
                         decorationThickness: 2,
                       ),
@@ -100,7 +119,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               icon: const Icon(Icons.menu, color: Colors.white, size: 28),
               color: Colors.white,
               elevation: 4,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               onSelected: _onMenuSelected,
               itemBuilder: (context) {
                 return List.generate(_menuItems.length, (index) {
@@ -109,8 +130,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                     child: Text(
                       _menuItems[index],
                       style: GoogleFonts.poppins(
-                        color: _currentIndex == index ? Colors.green : Colors.black87,
-                        fontWeight: _currentIndex == index ? FontWeight.bold : FontWeight.normal,
+                        color: _currentIndex == index
+                            ? Colors.green
+                            : Colors.black87,
+                        fontWeight: _currentIndex == index
+                            ? FontWeight.bold
+                            : FontWeight.normal,
                       ),
                     ),
                   );
@@ -122,7 +147,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       ),
       body: PageView(
         controller: _pageController,
-        physics: const NeverScrollableScrollPhysics(), // Disable swipe gestures for "Web" feel
+        physics:
+            const NeverScrollableScrollPhysics(), // Disable swipe gestures for "Web" feel
         children: _screens,
       ),
     );
