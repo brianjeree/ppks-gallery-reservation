@@ -134,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
             fit: StackFit.expand,
             children: [
               Image.asset(
-                'assets/foto homescreen/kebun sawit 2.png',
+                'assets/home_images/kebun sawit 2.png',
                 fit: BoxFit.cover,
               ),
               Container(color: Colors.black.withOpacity(0.6)),
@@ -193,7 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
           height: MediaQuery.of(context).size.height * 0.4,
           width: double.infinity,
           child: Image.asset(
-            'assets/foto homescreen/kebun sawit 2.png',
+            'assets/home_images/kebun sawit 2.png',
             fit: BoxFit.cover,
           ),
         ),

@@ -15,9 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Timer? _timer;
 
   final List<String> _backgroundImages = [
-    'assets/foto homescreen/kebun sawit.png',
-    'assets/foto homescreen/kebun sawit 2.png',
-    'assets/foto homescreen/pohon sawit.png',
+    'assets/home_images/kebun sawit.png',
+    'assets/home_images/kebun sawit 2.png',
+    'assets/home_images/pohon sawit.png',
   ];
 
   @override
