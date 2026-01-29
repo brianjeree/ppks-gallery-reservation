@@ -4,7 +4,7 @@ import 'home_screen.dart';
 import 'unified_reservation_screen.dart';
 import 'about_screen.dart';
 import 'contact_screen.dart';
-import 'visit_check_screen.dart';
+
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -22,7 +22,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     UnifiedReservationScreen(),
     AboutScreen(),
     ContactScreen(),
-    VisitCheckScreen(),
+
   ];
 
   final List<String> _menuItems = [
@@ -30,7 +30,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     "RESERVATION",
     "ABOUT",
     "CONTACT",
-    "VISIT CHECK",
+
   ];
 
   @override
