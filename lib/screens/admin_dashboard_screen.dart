@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'qr_scan_screen.dart';
+
 
 class AdminDashboardScreen extends StatelessWidget {
   const AdminDashboardScreen({super.key});
@@ -183,12 +183,7 @@ class AdminDashboardScreen extends StatelessWidget {
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const QRScanScreen())),
-          icon: const Icon(Icons.qr_code_scanner),
-          label: const Text("Scan Tiket"),
-          backgroundColor: Colors.green.shade800,
-        ),
+
       ),
     );
   }
